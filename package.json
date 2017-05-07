@@ -3,5 +3,8 @@
   "version": "0.1.0",
   "description": "Configurable fetch wrapper for retrieving JSON",
   "main": "index.js",
-  "repository": "laggingreflex/fetch-json-always"
+  "repository": "laggingreflex/fetch-json-always",
+  "dependencies": {
+    "merge": "^1.2.0"
+  }
 }
