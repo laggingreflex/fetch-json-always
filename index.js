@@ -53,6 +53,19 @@ function fetchJsonAlways(pathArg, optsArg) {
 
   return fetch(path, opts).then(response => {
 
+    return response
+      .text()
+      .then(text => {
+        let json
+        try {
+          json = JSON.parse(text);
+          return json
+        } catch (error) {
+          json = { error: error.message, body: text }
+
+        }
+      })
+
     let text, textError;
     let json, jsonError;
     let promise = Promise.resolve();
@@ -76,7 +89,6 @@ function fetchJsonAlways(pathArg, optsArg) {
         return json;
       } else {
         response.error = response.error || jsonError || textError || ((response ? response.status + ' ' : '') + text);
-        response.body = response.body || json || text;
         return response;
       }
     });
