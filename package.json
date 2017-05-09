@@ -1,6 +1,6 @@
 {
   "name": "fetch-json-always",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Configurable fetch wrapper for retrieving JSON",
   "main": "index.js",
   "repository": "laggingreflex/fetch-json-always",
